@@ -1,0 +1,54 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/lists/lists",
+    "pages/cart/cart",
+    "pages/community/community",
+    "pages/me/me",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "蛋糕店",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#cacaca",
+    "selectedColor": "#2c2c2c",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "image/10.png",
+        "selectedIconPath": "image/11.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/lists/lists",
+        "iconPath": "image/20.png",
+        "selectedIconPath": "image/21.png",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "iconPath": "image/30.png",
+        "selectedIconPath": "image/31.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/community/community",
+        "iconPath": "image/40.png",
+        "selectedIconPath": "image/41.png",
+        "text": "社区"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "iconPath": "image/50.png",
+        "selectedIconPath": "image/51.png",
+        "text": "我"
+      }
+    ]
+  }
+}
