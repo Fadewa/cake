@@ -1,0 +1,10 @@
+/**index.wxss**/
+@import '../style/weui.wxss';
+swiper{
+  height: 3600rpx;
+}
+.slide-image{
+  width: 100%;
+  height: 360rpx;
+
+}
