@@ -1,2 +1,102 @@
 <!--pages/me/me.wxml-->
-<text>pages/me/me.wxml</text>
+<image class='me' src='/image/me.jpg'>
+  <view class='me_info'>
+    <view class='head_l'><image src="/image/default.png"></image></view>
+    <view class='head_m'>
+      <view>12345678900</view>
+      <view class='mobile'>12345678900</view>
+    </view>
+    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </view>
+</image>
+
+<view class='coupon white'>
+  <view>
+    <view>0张</view>
+    <view class='text'>优惠券</view>
+  </view>
+  <view>
+    <view>¥0.00</view>
+    <view class='text'>余额</view>
+  </view>
+</view>
+
+
+            <view class="weui-panel__bd">
+                <view class="weui-media-box weui-media-box_small-appmsg">
+                  <view class="weui-cells weui-cells_in-small-appmsg">
+                    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                            <view class="weui-cell__hd iconfont icon-gou"></view>
+                            <view class="weui-cell__bd weui-cell_primary">
+                                <view>我的订单</view>
+                            </view>
+                            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                        </navigator>
+                        <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                            <view class="weui-cell__hd iconfont icon-motuoche"></view>
+                            <view class="weui-cell__bd weui-cell_primary">
+                                <view>地址管理</view>
+                            </view>
+                            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                        </navigator>
+                        <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                            <view class="weui-cell__hd iconfont icon-youhuiquan"></view>
+                            <view class="weui-cell__bd weui-cell_primary">
+                                <view>优惠券</view>
+                            </view>
+                            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                        </navigator>
+                        <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                            <view class="weui-cell__hd iconfont icon-yue"></view>
+                            <view class="weui-cell__bd weui-cell_primary">
+                                <view>余额充值</view>
+                            </view>
+                            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                        </navigator>
+                        <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                            <view class="weui-cell__hd iconfont icon-shafa"></view>
+                            <view class="weui-cell__bd weui-cell_primary">
+                                <view>蛋糕店</view>
+                            </view>
+                            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                        </navigator>
+                    </view>
+                </view>
+            </view>
+
+
+<view class="weui-panel__bd">
+  <view class="weui-media-box weui-media-box_small-appmsg">
+     <view class="weui-cells weui-cells_in-small-appmsg">
+        <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+          <view class="weui-cell__bd weui-cell_primary">
+            <view>用户反馈</view>
+          </view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+        <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+          <view class="weui-cell__bd weui-cell_primary">
+            <view>用户协议</view>
+          </view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+        <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+          <view class="weui-cell__bd weui-cell_primary">
+            <view>版本</view>
+          </view>
+          <view class="weui-cell__ft">2.7</view>
+        </navigator>
+        <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+          <view class="weui-cell__bd weui-cell_primary">
+            <view>关于</view>
+          </view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+     </view>
+  </view>
+</view>
+ 
+<view class='hotline white center' bindtap='makecall'>
+  <view><text>400-400-4001</text></view>
+  <view class='iconfont icon-dianhua'></view>
+</view>

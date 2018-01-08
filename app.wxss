@@ -13,4 +13,22 @@
 }
 page{
   background: #fafafa;
+  font-size: 28rpx;
+  box-sizing: border-box;
+  background: #fafafa;
+}
+.center{
+  text-align: center;
+}
+.white{
+  background: #fff;
+}
+.left{
+  float: left;
+}
+.right{
+  float: right;
+}
+.clearfix{
+  clear: both;
 }

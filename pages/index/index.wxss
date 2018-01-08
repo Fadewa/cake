@@ -1,10 +1,32 @@
 /**index.wxss**/
 @import '../style/weui.wxss';
 swiper{
-  height: 3600rpx;
+  height: 360rpx;
 }
 .slide-image{
   width: 100%;
   height: 360rpx;
-
+}
+.hotcake,.newcake{
+  margin: 24rpx 0;
+}
+.hot_tit,.new_tit{
+  padding-top: 24rpx;
+}
+.hotcake_,.newcake_{
+  white-space: nowrap;
+  display: flex;
+}
+.newcake_h image{
+  width: 100%;
+  height: 240rpx;
+}
+.newcakes_li{
+  display: inline-block;
+}
+.hotcake_ image,
+.newcake_ image{
+  width: 360rpx;
+  height: 240rpx;
+  display: inline-block;
 }

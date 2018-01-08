@@ -14,8 +14,16 @@ Page({
     indicatorDots: true,
     autoplay: true,
     interval: 5000,
-    duration: 1000
+    duration: 1000,
+    cakes: ["/image/cake1.jpg", "/image/cake2.jpg", "/image/cake3.jpg", "/image/cake1.jpg", "/image/cake2.jpg", "/image/cake3.jpg"],
+    new_cakes: [
+      { src: "/image/cake1.jpg", name: "奶酪" },
+      { src: "/image/cake2.jpg", name: "草莓" },
+      { src: "/image/cake3.jpg", name: "黑森林" },
+      { src: "/image/cake1.jpg", name: "奶酪" }
+    ],
   },
+  
 
   /**
    * 生命周期函数--监听页面加载
@@ -28,7 +36,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+
   },
 
   /**
@@ -70,6 +78,6 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    
+
   }
 })

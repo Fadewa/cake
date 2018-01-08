@@ -5,14 +5,54 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    tabs: ["蛋糕", "冰淇淋", "小切块", "咖啡", "常温蛋糕", "设计师专区"],
+    activeIndex: 0,
+    cakes:[
+      {
+        src:"/image/cake1.jpg",
+        ename:"Chinese Date",
+        cname:"枣儿",
+        intro:"红枣奶油戚风，与姜撞奶慕斯",
+        price:"289.00",
+        weight:"2.0"
+      },
+      {
+        src: "/image/cake2.jpg",
+        ename: "Chinese Date",
+        cname: "枣儿",
+        intro: "红枣奶油戚风，与姜撞奶慕斯",
+        price: "289.00",
+        weight: "2.0"
+      },
+      {
+        src: "/image/cake3.jpg",
+        ename: "Chinese Date",
+        cname: "枣儿",
+        intro: "红枣奶油戚风，与姜撞奶慕斯",
+        price: "289.00",
+        weight: "2.0"
+      },
+      {
+        src: "/image/cake1.jpg",
+        ename: "Chinese Date",
+        cname: "枣儿",
+        intro: "红枣奶油戚风，与姜撞奶慕斯",
+        price: "289.00",
+        weight: "2.0"
+      }
+    ]
   },
 
   /**
-   * 生命周期函数--监听页面加载
+   * 生命周期函数--监听页面加载 
    */
-  onLoad: function (options) {
-  
+  onLoad: function (e) {
+   
+  },
+  tabClick: function (e) {
+    this.setData({
+      activeIndex: e.currentTarget.id
+    });
   },
 
   /**

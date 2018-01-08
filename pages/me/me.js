@@ -7,7 +7,11 @@ Page({
   data: {
   
   },
-
+  makecall:function(){
+    wx.makePhoneCall({
+      phoneNumber: '400-400-4001',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
