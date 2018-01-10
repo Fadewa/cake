@@ -1,18 +1,88 @@
 // pages/cart/cart.js
+const app =getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    lists:[],
+    isshow:false
   },
-
+  inputFun:function(e){
+    console.log(e.detail)
+  },
+  decrease:function(e){
+    var i = e.currentTarget.dataset.choose
+    console.log(i)
+    
+    var that = this
+    if (this.data.lists[i].num>0){
+      this.data.lists[i].num -= 1
+      this.setData({
+        lists: this.data.lists
+      })
+      wx.request({
+        url: "https://app.lovejia.net/cakeshop/index.php?s=/w16/Demo/Demo/updateList",
+        data: {
+          num: this.data.lists[i].num,
+          id_num: this.data.lists[i].id
+        },
+        header: {
+          'content-type': 'application/json' // 默认值
+        }
+      })
+    }
+    if (this.data.lists[i].num == 0) { 
+      wx.request({
+        url: "https://app.lovejia.net/cakeshop/index.php?s=/w16/Demo/Demo/deleteList",
+        data: {
+          id_num: this.data.lists[i].id
+        },
+        header: {
+          'content-type': 'application/json' // 默认值
+        },
+        success:function(res){
+          var lists = that.data.lists
+          lists.splice(i, 1)
+          that.setData({
+            lists: lists
+          })
+          console.log(that.data.lists)
+        },
+      })
+    }
+    // else{
+    //   this.data.lists[i].num = null
+    //   this.setData({
+    //     lists: this.data.lists
+    //   })
+    // }
+  },
+  add:function(e){
+    var a = e.currentTarget.dataset.index
+    var num = this.data.lists[a].num
+    num = parseInt(num) + 1
+    this.data.lists[a].num = num
+    this.setData({
+      lists: this.data.lists
+    })
+    wx.request({
+      url: "https://app.lovejia.net/cakeshop/index.php?s=/w16/Demo/Demo/updateList",
+      data:{
+        num: num,
+        id_num: this.data.lists[a].id
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    
   },
 
   /**
@@ -26,7 +96,61 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    var that = this
+    var cakes = app.globalData.cakes
+    var cart = app.globalData.cart
+    var y = []
+    //获取购物车信息
+    wx.request({
+      url: 'https://app.lovejia.net/cakeshop/index.php?s=/w16/Demo/Demo/getList',
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function (res) {
+        if (res.data) {
+          that.setData({
+            isshow: true
+          })
+        }
+        //获取商品id
+        wx.request({
+          url: 'https://app.lovejia.net/cakeshop/index.php?s=/w16/Demo/Demo/getPro',
+          header: {
+            'content-type': 'application/json'
+          },
+          success: function (res) {
+            var array_id = res.data
+            //向cakes表里面核对与其ID相等的cartlist表里面的项
+            wx.request({
+              url: 'https://app.lovejia.net/cakeshop/index.php?s=/w16/Demo/Demo/swiper122',
+              header: {
+                'content-type': 'application/json' // 默认值
+              },
+              success: function (res) {
+                var list = res.data
+                if (array_id != null) {
+                  for (var i = 0; i < array_id.length; i++) {
+                    if (list != null) {
+                      for (var x = 0; x < list.length; x++) {
+                        if (array_id[i].id_num == list[x].id) {
+                          //把购物车的商品数量给到数组里
+                          list[x].num = array_id[i].num
+                          y.push(list[x])
+                        }
+                      }
+                    }
+                  }
+                }
+                that.setData({
+                  lists: y
+                })
+              }
+            })
+          }
+        })
+      }
+    })
+
   },
 
   /**

@@ -11,7 +11,7 @@
 <view class='hotcake center white'> 
   <view class='hot_tit'><text>蛋糕店 ● 榜单</text></view>
   <scroll-view class="hotcake_" scroll-x="true">
-    <image wx:for="{{cakes}}" wx:key="" src='{{item}}'></image>
+    <image bindtap='link' wx:for="{{cakes}}" wx:key="" src='{{item.img}}' data-id='{{item.id}}'></image>
     <view class='clearfix'></view>
   </scroll-view>
 </view>

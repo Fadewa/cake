@@ -1,1 +1,44 @@
 /* pages/cart/cart.wxss */
+.empty{
+  font-size:42rpx;
+  padding: 120rpx 4%;
+  text-align: center; 
+}
+.cart_li{
+  padding: 12rpx 4%;
+  background: #fff;
+  margin: 24rpx 0;
+  align-items: center;
+}
+.cart_img,.count{
+  width: 25%;
+}
+.info{
+  width: 50%;
+}
+.cart_li image{
+  width: 100%;
+  height: 172rpx;
+}
+.ename,.cname{
+  font-size: 26rpx;
+}
+.weight,.price{
+  color: #a3a3a3;
+  font-size: 22rpx;
+}
+.price{
+  font-weight: 400;
+}
+.count{
+  background: #a3a3a3;
+  align-items: center;
+}
+.count text{
+  display: block;
+  padding: 8rpx 18rpx;
+  background: #d7d7d7;
+}
+.count input{
+  text-align: center;
+}

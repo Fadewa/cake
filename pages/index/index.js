@@ -15,7 +15,7 @@ Page({
     autoplay: true,
     interval: 5000,
     duration: 1000,
-    cakes: ["/image/cake1.jpg", "/image/cake2.jpg", "/image/cake3.jpg", "/image/cake1.jpg", "/image/cake2.jpg", "/image/cake3.jpg"],
+    cakes: [],
     new_cakes: [
       { src: "/image/cake1.jpg", name: "奶酪" },
       { src: "/image/cake2.jpg", name: "草莓" },
@@ -23,13 +23,52 @@ Page({
       { src: "/image/cake1.jpg", name: "奶酪" }
     ],
   },
-  
+  link:function(e){
+    var id = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: '/pages/detail/detail?id=' + id,
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    var that = this
+    //蛋糕详情
+    wx.request({
+      url: 'https://app.lovejia.net/cakeshop/index.php?s=/w16/Demo/Demo/swiper122',
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success:function(res){
+        app.globalData.cakes=res.data
+        var x = []
+        for(var i=0;i<res.data.length;i++){
+          x.push({ id: res.data[i].id, img: res.data[i].img})
+        }
+        that.setData({
+          cakes:x
+        })
+      }
+    })
+    //购物数量
+    wx.request({
+      url: 'https://app.lovejia.net/cakeshop/index.php?s=/w16/Demo/Demo/swiper122',
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success:function(res){
+        app.globalData.cakes=res.data
+        var x = []
+        for(var i=0;i<res.data.length;i++){
+          x.push({ id: res.data[i].id, img: res.data[i].img})
+        }
+        that.setData({
+          cakes:x
+        })
+      }
+    })
   },
 
   /**

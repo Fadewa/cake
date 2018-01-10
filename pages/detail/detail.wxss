@@ -1,0 +1,86 @@
+/* pages/detail/detail.wxss */
+@import '../style/weui.wxss';
+swiper{
+  height: 480rpx;
+  width: 100%;
+}
+image{
+  width: 100%;
+  height: 480rpx;
+}
+.content{
+  padding: 12rpx 4%;
+  background: #fff;
+  margin-bottom: 24rpx; 
+}
+.ename{
+  font-size: 42rpx;
+  font-weight: 600;
+}
+.lable{
+  display: flex;
+  text-align: left;
+  font-size: 22rpx;
+  justify-content: flex-start;
+}
+.lable>view{
+  margin-right: 24rpx;
+}
+.lable text{
+  display: inline-block;
+  padding: 8rpx 36rpx;
+  border: solid 1px #cec7bf;
+  color: #cec7bf;
+  border-radius: 4px;
+}
+.tip{
+  font-size: 22rpx;
+  color: #a3a3a3;
+}
+.price{
+  font-size: 42rpx;
+  color: #d09c74;
+}
+.weui-cell_link{
+  color: #000;
+}
+.weui-cell__ft_in-access:after{
+  border-color:#000;
+}
+.description{
+  padding: 24rpx 4%;
+  background: #fff;
+  font-size: 22rpx;
+}
+.footer{
+  height: 96rpx;
+  width: 100%;
+}
+.buy{
+  background: #fff;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding:0 ;
+}
+.buy image{
+  height: 42rpx;
+  width: 42rpx;
+}
+.buy>.weui-cell__hd,
+.buy>.weui-cell__bd{
+  height: 96rpx;
+  line-height: 96rpx;
+}
+.buy>.weui-cell__hd:first-child{
+  width: 20%;
+  border-right: solid 1px #a3a3a3;
+}
+.buy>.weui-cell__bd:last-child{
+  color: #fff;
+  background: #010101;
+}
+.weui-cell:before{
+  left:0;
+}

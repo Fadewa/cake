@@ -14,12 +14,12 @@
                 <!-- 蛋糕  -->
                 <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
                   <view class='cake_box' wx:for="{{cakes}}" wx:key="cakes" wx:for-item="item">
-                    <image src='{{item.src}}'></image>
+                    <image src='{{item.img}}'></image>
                     <view class='ename'><text>{{item.ename}}</text></view>
                     <view class='cname'><text>{{item.cname}}</text></view>
-                    <view class='intro'><text>/{{item.intro}}/</text></view>
+                    <view class='intro'><text>{{item.description}}</text></view>
                     <view>
-                      <text class='left price'>¥{{item.price}}/{{item.weight}}磅</text>
+                      <text class='left price'>¥{{item.price}}/2磅</text>
                       <text class='right iconfont icon-cart'></text>
                       <text class='clearfix'></text>
                     </view>
@@ -28,12 +28,12 @@
                 <!-- 冰淇淋  -->
                 <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
                   <view class='cake_box' wx:for="{{cakes}}" wx:key="cakes" wx:for-item="item">
-                    <image src='{{item.src}}'></image>
+                    <image src='{{item.img}}'></image>
                     <view class='ename'><text>{{item.ename}}</text></view>
                     <view class='cname'><text>{{item.cname}}</text></view>
-                    <view class='intro'><text>/{{item.intro}}/</text></view>
+                    <view class='intro'><text>{{item.description}}</text></view>
                     <view>
-                      <text class='left price'>¥{{item.price}}/{{item.weight}}磅</text>
+                      <text class='left price'>¥{{item.price}}/2磅</text>
                       <text class='right iconfont icon-cart'></text>
                       <text class='clearfix'></text>
                     </view>
@@ -42,12 +42,12 @@
                 <!-- 小切块  -->
                 <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
                   <view class='cake_box' wx:for="{{cakes}}" wx:key="cakes" wx:for-item="item">
-                    <image src='{{item.src}}'></image>
+                    <image src='{{item.img}}'></image>
                     <view class='ename'><text>{{item.ename}}</text></view>
                     <view class='cname'><text>{{item.cname}}</text></view>
-                    <view class='intro'><text>/{{item.intro}}/</text></view>
+                    <view class='intro'><text>/{{item.description}}/</text></view>
                     <view>
-                      <text class='left price'>¥{{item.price}}/{{item.weight}}磅</text>
+                      <text class='left price'>¥{{item.price}}/2磅</text>
                       <text class='right iconfont icon-cart'></text>
                       <text class='clearfix'></text>
                     </view>
@@ -56,12 +56,12 @@
                 <!-- 咖啡  -->
                 <view class="weui-tab__content" hidden="{{activeIndex != 3}}">
                   <view class='cake_box' wx:for="{{cakes}}" wx:key="cakes" wx:for-item="item">
-                    <image src='{{item.src}}'></image>
+                    <image src='{{item.img}}'></image>
                     <view class='ename'><text>{{item.ename}}</text></view>
                     <view class='cname'><text>{{item.cname}}</text></view>
-                    <view class='intro'><text>/{{item.intro}}/</text></view>
+                    <view class='intro'><text>/{{item.description}}/</text></view>
                     <view>
-                      <text class='left price'>¥{{item.price}}/{{item.weight}}磅</text>
+                      <text class='left price'>¥{{item.price}}/2磅</text>
                       <text class='right iconfont icon-cart'></text>
                       <text class='clearfix'></text>
                     </view>
@@ -70,12 +70,12 @@
                 <!-- 常温蛋糕  -->
                 <view class="weui-tab__content" hidden="{{activeIndex != 4}}">
                   <view class='cake_box' wx:for="{{cakes}}" wx:key="cakes" wx:for-item="item">
-                    <image src='{{item.src}}'></image>
+                    <image src='{{item.img}}'></image>
                     <view class='ename'><text>{{item.ename}}</text></view>
                     <view class='cname'><text>{{item.cname}}</text></view>
-                    <view class='intro'><text>/{{item.intro}}/</text></view>
+                    <view class='intro'><text>/{{item.description}}/</text></view>
                     <view>
-                      <text class='left price'>¥{{item.price}}/{{item.weight}}磅</text>
+                      <text class='left price'>¥{{item.price}}/2磅</text>
                       <text class='right iconfont icon-cart'></text>
                       <text class='clearfix'></text>
                     </view>
@@ -84,12 +84,12 @@
                 <!-- 设计师专区  -->
                 <view class="weui-tab__content" hidden="{{activeIndex != 5}}">
                   <view class='cake_box' wx:for="{{cakes}}" wx:key="cakes" wx:for-item="item">
-                    <image src='{{item.src}}'></image>
+                    <image src='{{item.img}}'></image>
                     <view class='ename'><text>{{item.ename}}</text></view>
                     <view class='cname'><text>{{item.cname}}</text></view>
-                    <view class='intro'><text>/{{item.intro}}/</text></view>
+                    <view class='intro'><text>/{{item.description}}/</text></view>
                     <view>
-                      <text class='left price'>¥{{item.price}}/{{item.weight}}磅</text>
+                      <text class='left price'>¥{{item.price}}/2磅</text>
                       <text class='right iconfont icon-cart'></text>
                       <text class='clearfix'></text>
                     </view>

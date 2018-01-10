@@ -32,3 +32,6 @@ page{
 .clearfix{
   clear: both;
 }
+.flex{
+  display: flex;
+}

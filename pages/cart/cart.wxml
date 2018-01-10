@@ -1,2 +1,21 @@
 <!--pages/cart/cart.wxml-->
-<text>pages/cart/cart.wxml</text>
+
+<block wx:if="{{!isshow}}">
+  <view class='empty'><text>暂无添加商品</text></view>
+</block>
+<view wx:else class='cart_ul'>
+  <view class='cart_li flex' wx:for="{{lists}}" wx:key="lists" >
+    <view class='cart_img'><image src='{{item.img}}'/></view>
+    <view class='info'>
+      <view class='ename'>{{item.ename}}</view>
+      <view class='cname'>{{item.cname}}</view>
+      <view class='weight'>规格：{{item.weight}}磅</view>
+      <view class='price'>¥{{item.price}}</view>
+    </view>
+    <view class='count flex'>
+      <text bindtap='decrease' data-choose='{{index}}'>-</text>
+      <input name='count' value="{{item.num}}"/>
+      <text bindtap='add' data-index='{{index}}'>+</text>
+    </view>
+  </view>
+</view>
