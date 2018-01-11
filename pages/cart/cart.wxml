@@ -14,7 +14,7 @@
     </view>
     <view class='count flex'>
       <text bindtap='decrease' data-choose='{{index}}'>-</text>
-      <input name='count' value="{{item.num}}"/>
+      <input name='count' value="{{item.num}}" disabled='disabled'/>
       <text bindtap='add' data-index='{{index}}'>+</text>
     </view>
   </view>

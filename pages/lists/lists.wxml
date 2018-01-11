@@ -13,7 +13,7 @@
             <view class="weui-tab__panel">
                 <!-- 蛋糕  -->
                 <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
-                  <view class='cake_box' wx:for="{{cakes}}" wx:key="cakes" wx:for-item="item">
+                  <view class='cake_box' wx:for="{{cakes}}" wx:key="cakes" wx:for-item="item" data-id='{{item.id}}' bindtap='link'>
                     <image src='{{item.img}}'></image>
                     <view class='ename'><text>{{item.ename}}</text></view>
                     <view class='cname'><text>{{item.cname}}</text></view>

@@ -7,15 +7,10 @@ Page({
    */
   data: {
     lists:[],
-    isshow:false
-  },
-  inputFun:function(e){
-    console.log(e.detail)
+    isshow:false//有无商品的控制开关
   },
   decrease:function(e){
     var i = e.currentTarget.dataset.choose
-    console.log(i)
-    
     var that = this
     if (this.data.lists[i].num>0){
       this.data.lists[i].num -= 1
@@ -23,7 +18,7 @@ Page({
         lists: this.data.lists
       })
       wx.request({
-        url: "https://app.lovejia.net/cakeshop/index.php?s=/w16/Demo/Demo/updateList",
+        url: "https://eaglefly.ltd/cakeshop/index.php?s=/w16/Demo/Demo/updateList",
         data: {
           num: this.data.lists[i].num,
           id_num: this.data.lists[i].id
@@ -35,7 +30,7 @@ Page({
     }
     if (this.data.lists[i].num == 0) { 
       wx.request({
-        url: "https://app.lovejia.net/cakeshop/index.php?s=/w16/Demo/Demo/deleteList",
+        url: "https://eaglefly.ltd/cakeshop/index.php?s=/w16/Demo/Demo/deleteList",
         data: {
           id_num: this.data.lists[i].id
         },
@@ -48,16 +43,23 @@ Page({
           that.setData({
             lists: lists
           })
-          console.log(that.data.lists)
+          wx.request({
+            url: 'https://eaglefly.ltd/cakeshop/index.php?s=/w16/Demo/Demo/getList',
+            header: {
+              'content-type': 'application/json' // 默认值
+            },
+            //没有商品时显示的东西
+            success: function (res) {
+              if (res.data == false) {
+                that.setData({
+                  isshow: false
+                })
+              }
+            }
+          })
         },
       })
     }
-    // else{
-    //   this.data.lists[i].num = null
-    //   this.setData({
-    //     lists: this.data.lists
-    //   })
-    // }
   },
   add:function(e){
     var a = e.currentTarget.dataset.index
@@ -68,7 +70,7 @@ Page({
       lists: this.data.lists
     })
     wx.request({
-      url: "https://app.lovejia.net/cakeshop/index.php?s=/w16/Demo/Demo/updateList",
+      url: "https://eaglefly.ltd/cakeshop/index.php?s=/w16/Demo/Demo/updateList",
       data:{
         num: num,
         id_num: this.data.lists[a].id
@@ -107,7 +109,7 @@ Page({
         'content-type': 'application/json' // 默认值
       },
       success: function (res) {
-        if (res.data) {
+        if (res.data==true) {
           that.setData({
             isshow: true
           })

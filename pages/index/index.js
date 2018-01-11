@@ -6,10 +6,10 @@ Page({
    */
   data: {
     imgUrls: [
-      'https://app.lovejia.net/cakeshop/Uploads/Picture/bg/bg1.jpg',
-      'https://app.lovejia.net/cakeshop/Uploads/Picture/bg/bg2.jpg',
-      'https://app.lovejia.net/cakeshop/Uploads/Picture/bg/bg3.jpg',
-      'https://app.lovejia.net/cakeshop/Uploads/Picture/bg/bg4.jpg'
+      'https://eaglefly.ltd/cakeshop/Uploads/Picture/bg/bg1.jpg',
+      'https://eaglefly.ltd/cakeshop/Uploads/Picture/bg/bg2.jpg',
+      'https://eaglefly.ltd/cakeshop/Uploads/Picture/bg/bg3.jpg',
+      'https://eaglefly.ltd/cakeshop/Uploads/Picture/bg/bg4.jpg'
     ],
     indicatorDots: true,
     autoplay: true,
@@ -37,7 +37,7 @@ Page({
     var that = this
     //蛋糕详情
     wx.request({
-      url: 'https://app.lovejia.net/cakeshop/index.php?s=/w16/Demo/Demo/swiper122',
+      url: 'https://eaglefly.ltd/cakeshop/index.php?s=/w16/Demo/Demo/swiper122',
       header: {
         'content-type': 'application/json' // 默认值
       },
@@ -54,7 +54,7 @@ Page({
     })
     //购物数量
     wx.request({
-      url: 'https://app.lovejia.net/cakeshop/index.php?s=/w16/Demo/Demo/swiper122',
+      url: 'https://eaglefly.ltd/cakeshop/index.php?s=/w16/Demo/Demo/swiper122',
       header: {
         'content-type': 'application/json' // 默认值
       },

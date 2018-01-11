@@ -1,13 +1,4 @@
 // pages/detail/detail.js
-var add=function(e,that){
-  var x = 0
-  for (var i = 0; i < e.length; i++) {
-    x += parseInt(e[i].num)
-  }
-  that.setData({
-    nummber: x
-  })
-}
 const app=getApp();
 Page({
 
@@ -52,22 +43,15 @@ Page({
           that.setData({
             'cake.num': parseInt(cake.num)+1
           })
+          that.onShow()
+        }else{
+          that.setData({
+            nummber: that.data.nummber + 1
+          })
+          that.onShow()
         }
-        //获取购物车里面商品数量
-        wx.request({
-          url: 'https://app.lovejia.net/cakeshop/index.php?s=/w16/Demo/Demo/getNum',
-          header: {
-            'content-type': 'application/json' // 默认值
-          },
-          success: function (res) {
-            that.setData({
-              nummber: res.data
-            })
-          }
-        })
       }
     })
-    
   },
   /**
    * 生命周期函数--监听页面加载
@@ -76,17 +60,33 @@ Page({
     var that = this
     var cakes = app.globalData.cakes
     var cart = app.globalData.cart
-    var id = cakes.length - options.id
-    for(var i=0;i<cakes.length;i++){
-      if(id==i){
-        var lable = cakes[i].label.split(",")
-        that.setData({
-          imgUrls: cakes[i].pics,
-          cake: cakes[i],
-          lable: lable
-        })
+    var id = cakes.length - options.id;
+    var lable = cakes[id].label.split(",")
+    that.setData({
+      cake: cakes[id],
+      imgUrls: cakes[id].pics,
+      lable: lable
+    })
+    wx.request({
+      url: "https://app.lovejia.net/cakeshop/index.php?s=/w16/Demo/Demo/getPro",
+      data: {
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function (res) {
+        if(res.data!=null){
+          for (var i = 0; i < res.data.length; i++) {
+            if (cakes[id].id == res.data[i].id_num) {
+              cakes[id].num = res.data[i].num
+              that.setData({
+                cake: cakes[id]
+              })
+            }
+          }
+        }
       }
-    }
+    })
   },
 
   /**
@@ -99,8 +99,19 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-    
+  onShow: function (options) {
+    var that=this
+    wx.request({
+      url: 'https://app.lovejia.net/cakeshop/index.php?s=/w16/Demo/Demo/getNum',
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function (res) {
+        that.setData({
+          nummber: res.data
+        })
+      }
+    })
   },
 
   /**

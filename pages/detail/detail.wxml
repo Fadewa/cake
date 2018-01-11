@@ -34,7 +34,7 @@
 <view class='buy weui-cell'>
   <view class="weui-cell__hd" style="position: relative;" bindtap='tocart'>
     <image src="/image/30.png" />
-    <block wx:if="{{nummber!=null}}">
+    <block wx:if="{{nummber!=0}}">
       <view class="weui-badge" style="position: absolute;top: 14rpx;right:42rpx">{{nummber}}</view>
     </block>
   </view>
