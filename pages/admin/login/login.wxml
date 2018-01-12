@@ -1,0 +1,19 @@
+<!--pages/admin/login/login.wxml-->
+<view class='login'>
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="section">
+      <view class='section__title iconfont icon-tubiao211'></view>
+      <input name="mobile" placeholder="请输入手机号码" placeholder-style='color:#fff;'/>
+    </view>
+    <view class="section">
+      <view class='section__title iconfont icon-ai-password'></view>
+      <input type='password' name="psw" placeholder="请输入密码" placeholder-style='color:#fff;'/>
+    </view>
+    <view class="btn-area">
+      <button class='submit' formType="submit" type='primary'>登录</button>
+    </view>
+  </form>
+</view>
+<navigator class='footer' url='/pages/admin/register/register'>
+  <text>立即注册</text>
+</navigator>

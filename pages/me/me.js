@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    mobile:''
   },
   makecall:function(){
     wx.makePhoneCall({
@@ -30,7 +30,20 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    var that = this 
+    wx.getStorage({
+      key: 'userinfo',
+      success: function(res) {
+        var mtel = res.data.mobile.substr(0, 3) + '****' + res.data.mobile.substr(7);
+        that.setData({
+          mobile: mtel
+        })
+      },fail:function(){
+        wx.navigateTo({
+          url: '/pages/admin/login/login',
+        })
+      },
+    })
   },
 
   /**

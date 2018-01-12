@@ -1,0 +1,41 @@
+<!--pages/admin/register/register.wxml-->
+<view class="weui-cells weui-cells_after-title">
+<view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">手机号码</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input type='text' class="weui-input" placeholder="请输入手机号码" bindinput='mobileInput'/>
+    </view>
+  </view>
+  <view class="weui-cell weui-cell_input weui-cell_vcode">
+    <view class="weui-cell__hd">
+      <view class="weui-label">验证码</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" placeholder="请输入验证码" bindinput='codeInput' />
+    </view>
+    <view class="weui-cell__ft" bindtap=''>
+      <view class="weui-vcode-btn" type="button" class="{{is_show?'show':'hide'}}" bindtap="clickVerify">获取验证码</view>
+      <view class="weui-vcode-btn" type="button" class="{{is_show?'hide':'show'}}">{{last_time}}秒后重发</view>
+    </view>
+  </view>
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">密码</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input type='password' class="weui-input" placeholder="请输入密码" bindinput='pswInput1'/>
+    </view>
+  </view>
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">密码确认</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input type='password' class="weui-input" placeholder="请再次输入密码" bindinput='pswInput2'/>
+    </view>
+  </view>
+</view>
+
+<button type='primary' bindtap='sendInfo'>注册</button>

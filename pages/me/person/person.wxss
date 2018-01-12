@@ -1,0 +1,21 @@
+/* pages/me/person/person.wxss */
+@import '/pages/style/weui.wxss';
+.margin{
+  height: 24rpx;
+  width: 100%;
+}
+image{
+  width: 64rpx;
+  height: 64rpx;
+}
+button{
+  background: #fff;
+  color: #f00;
+  margin-top: 56rpx;
+}
+.weui-cells>.weui-cell:first-child{
+  padding-bottom: 0;
+}
+.weui-cell{
+  font-size: 28rpx;
+}

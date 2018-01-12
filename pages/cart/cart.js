@@ -104,52 +104,53 @@ Page({
     var y = []
     //获取购物车信息
     wx.request({
-      url: 'https://app.lovejia.net/cakeshop/index.php?s=/w16/Demo/Demo/getList',
+      url: 'https://eaglefly.ltd/cakeshop/index.php?s=/w16/Demo/Demo/getList',
       header: {
         'content-type': 'application/json' // 默认值
       },
       success: function (res) {
-        if (res.data==true) {
+        console.log(res)
+        if (res.data) {
           that.setData({
             isshow: true
           })
-        }
-        //获取商品id
-        wx.request({
-          url: 'https://app.lovejia.net/cakeshop/index.php?s=/w16/Demo/Demo/getPro',
-          header: {
-            'content-type': 'application/json'
-          },
-          success: function (res) {
-            var array_id = res.data
-            //向cakes表里面核对与其ID相等的cartlist表里面的项
-            wx.request({
-              url: 'https://app.lovejia.net/cakeshop/index.php?s=/w16/Demo/Demo/swiper122',
-              header: {
-                'content-type': 'application/json' // 默认值
-              },
-              success: function (res) {
-                var list = res.data
-                if (array_id != null) {
-                  for (var i = 0; i < array_id.length; i++) {
-                    if (list != null) {
-                      for (var x = 0; x < list.length; x++) {
-                        if (array_id[i].id_num == list[x].id) {
-                          //把购物车的商品数量给到数组里
-                          list[x].num = array_id[i].num
-                          y.push(list[x])
+          //获取商品id
+          wx.request({
+            url: 'https://eaglefly.ltd/cakeshop/index.php?s=/w16/Demo/Demo/getPro',
+            header: {
+              'content-type': 'application/json'
+            },
+            success: function (res) {
+              var array_id = res.data
+              //向cakes表里面核对与其ID相等的cartlist表里面的项
+              wx.request({
+                url: 'https://eaglefly.ltd/cakeshop/index.php?s=/w16/Demo/Demo/swiper122',
+                header: {
+                  'content-type': 'application/json' // 默认值
+                },
+                success: function (res) {
+                  var list = res.data
+                  if (array_id != null) {
+                    for (var i = 0; i < array_id.length; i++) {
+                      if (list != null) {
+                        for (var x = 0; x < list.length; x++) {
+                          if (array_id[i].id_num == list[x].id) {
+                            //把购物车的商品数量给到数组里
+                            list[x].num = array_id[i].num
+                            y.push(list[x])
+                          }
                         }
                       }
                     }
                   }
+                  that.setData({
+                    lists: y
+                  })
                 }
-                that.setData({
-                  lists: y
-                })
-              }
-            })
-          }
-        })
+              })
+            }
+          })
+        }
       }
     })
 

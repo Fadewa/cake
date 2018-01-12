@@ -23,40 +23,57 @@ Page({
     var cart = app.globalData.cart
     var cake = this.data.cake
     var has = false
-    //存购物车的信息
-    wx.request({
-      url: "https://app.lovejia.net/cakeshop/index.php?s=/w16/Demo/Demo/saveCart",
-      data:{
-        id_num:cake.id,
-        ename: cake.ename,
-        cname: cake.cname,
-        label: cake.label,
-        num: cake.num,
-        price: cake.price,
-        weight: cake.weight
-      },
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      success:function(res){
-        if (res.data){
-          that.setData({
-            'cake.num': parseInt(cake.num)+1
-          })
-          that.onShow()
-        }else{
-          that.setData({
-            nummber: that.data.nummber + 1
-          })
-          that.onShow()
-        }
+    //判断一下是否登录
+    wx.getStorage({
+      key: 'userinfo',
+      success: function(res) {
+        console.log(res)
+        //存购物车的信息
+        wx.request({
+          url: "https://eaglefly.ltd/cakeshop/index.php?s=/w16/Demo/Demo/saveCart",
+          data: {
+            user : res.data.mobile,
+            id_num: cake.id,
+            ename: cake.ename,
+            cname: cake.cname,
+            label: cake.label,
+            num: cake.num,
+            price: cake.price,
+            weight: cake.weight
+          },
+          header: {
+            'content-type': 'application/json' // 默认值
+          },
+          success: function (res) {
+            if (res.data) {
+              that.setData({
+                'cake.num': parseInt(cake.num) + 1
+              })
+              that.onShow()
+            } else {
+              that.setData({
+                nummber: that.data.nummber + 1
+              })
+              that.onShow()
+            }
+          }
+        })
+      },fail:function(){
+        wx.navigateTo({
+          url: '/pages/admin/login/login',
+        })
       }
     })
+    
+    
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.showLoading({
+      title: '加载中...',
+    })
     var that = this
     var cakes = app.globalData.cakes
     var cart = app.globalData.cart
@@ -68,7 +85,7 @@ Page({
       lable: lable
     })
     wx.request({
-      url: "https://app.lovejia.net/cakeshop/index.php?s=/w16/Demo/Demo/getPro",
+      url: "https://eaglefly.ltd/cakeshop/index.php?s=/w16/Demo/Demo/getPro",
       data: {
       },
       header: {
@@ -85,6 +102,7 @@ Page({
             }
           }
         }
+        wx.hideLoading();
       }
     })
   },
@@ -102,7 +120,7 @@ Page({
   onShow: function (options) {
     var that=this
     wx.request({
-      url: 'https://app.lovejia.net/cakeshop/index.php?s=/w16/Demo/Demo/getNum',
+      url: 'https://eaglefly.ltd/cakeshop/index.php?s=/w16/Demo/Demo/getNum',
       header: {
         'content-type': 'application/json' // 默认值
       },

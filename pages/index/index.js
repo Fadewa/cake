@@ -34,6 +34,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.showLoading({
+      title: '加载中...',
+    })
     var that = this
     //蛋糕详情
     wx.request({
@@ -50,23 +53,7 @@ Page({
         that.setData({
           cakes:x
         })
-      }
-    })
-    //购物数量
-    wx.request({
-      url: 'https://eaglefly.ltd/cakeshop/index.php?s=/w16/Demo/Demo/swiper122',
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      success:function(res){
-        app.globalData.cakes=res.data
-        var x = []
-        for(var i=0;i<res.data.length;i++){
-          x.push({ id: res.data[i].id, img: res.data[i].img})
-        }
-        that.setData({
-          cakes:x
-        })
+        wx.hideLoading();
       }
     })
   },

@@ -1,0 +1,42 @@
+/* pages/admin/login/login.wxss */
+@import "/pages/style/iconfont.wxss";
+.login{
+  padding: 0 4%;
+}
+.section{
+  position: relative;
+  align-items: center;
+  text-align: center;
+}
+.section__title{
+  position: absolute;
+  font-size: 42rpx; 
+  left: 40rpx;
+  top: 50%;
+  transform: translate(0,-50%);
+  -webkit-transform: translate(0,-50%);
+}
+input{
+  box-sizing: border-box;
+  width: 92%;
+  padding: 24rpx 0 24rpx 10%;
+  margin:24rpx auto;
+  text-align: left;
+  height: auto;
+  background: #8b6944;
+  border-radius: 4px;
+  color: #fff;
+  opacity: 0.5;
+}
+button{
+  width: 92%;
+}
+.empty{
+  margin-top: 56rpx;
+}
+.footer{
+  float: right;
+  color: blue;
+  padding-right:8%; 
+  margin-top: 56rpx;
+}

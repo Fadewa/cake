@@ -3,8 +3,8 @@
   <view class='me_info'>
     <view class='head_l'><image src="/image/default.png"></image></view>
     <view class='head_m'>
-      <view>12345678900</view>
-      <view class='mobile'>12345678900</view>
+      <view>{{mobile}}</view>
+      <view class='mobile'>{{mobile}}</view>
     </view>
     <view class="weui-cell__ft weui-cell__ft_in-access"></view>
   </view>
@@ -20,8 +20,6 @@
     <view class='text'>余额</view>
   </view>
 </view>
-
-
             <view class="weui-panel__bd">
                 <view class="weui-media-box weui-media-box_small-appmsg">
                   <view class="weui-cells weui-cells_in-small-appmsg">

@@ -1,0 +1,11 @@
+/* pages/admin/register/register.wxss */
+@import "/pages/style/weui.wxss";
+.show{
+  display: block;
+}
+.hide{
+  display: none;
+}
+button{
+  margin-top: 108rpx;
+}
